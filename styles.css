@@ -1,0 +1,659 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f1a26; /* Более темный фон для сайта */
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.header {
+    position: fixed; /* Закрепляет хедер на месте */
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Верхний и нижний отступ 10px, боковые отступы 20px */
+    background-color: #1b2a38; /* Цвет фона хедера */
+    width: 100%; /* Ширина на всю ширину экрана */
+    box-sizing: border-box; /* Учитывает паддинги и границы в ширину */
+    z-index: 1000; /* Обеспечивает, чтобы хедер был поверх другого контента */
+}
+
+.logo img {
+    height: 63px;
+    transition: height 0.3s ease;
+}
+.header-nav {
+    display: flex;
+    gap: 20px;
+    margin: 0 auto; /* Центрирование блока */
+    justify-content: center; /* Центрирование элементов внутри блока */
+    flex: 1; /* Занимает всю доступную ширину */
+    transition: font-size 0.3s ease;
+}
+.header-nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+.header-nav a img {
+    height: 24px;
+    margin-right: 8px;
+}
+.header-nav a:hover {
+    color: #2ecc71;
+}
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+    transition: font-size 0.3s ease;
+    margin-left: auto; /* Двигаем кнопки вправо */
+}
+.auth-buttons a {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+.auth-buttons .login {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+.auth-buttons .login:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.auth-buttons .register {
+    background-color: #27ae60;
+    border: 2px solid #27ae60;
+    color: white;
+}
+
+.auth-buttons .register:hover {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+/* Стили для бокового меню */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #34495e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav a:hover {
+    color: #2ecc71;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+/* Кнопка меню */
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Скрыта по умолчанию */
+    position: absolute; /* Позиционируем кнопку меню */
+    left: 10px; /* Отступ от левого края */
+}
+/* Уменьшение логотипа и шрифтов на маленьких экранах */
+
+@media screen and (max-width: 1050px) {
+    .logo img {
+        height: 50px; /* Уменьшение логотипа */
+    }
+    .header-nav {
+        font-size: 16px; /* Уменьшение шрифта для навигации */
+    }
+    .header-nav a {
+        font-size: 16px; /* Уменьшение размера шрифта для ссылок */
+        padding: 6px 12px;
+    }
+    .auth-buttons {
+        font-size: 16px; /* Уменьшение кнопок входа и регистрации */
+    }
+    .auth-buttons a {
+        font-size: 16px; /* Уменьшение размера кнопок */
+        padding: 6px 12px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 10px 15px; /* Меньшие отступы для маленьких экранов */
+    }
+    .menu-icon {
+        display: block;
+    }
+
+    .logo {
+        display: none; /* Скрытие логотипа на маленьких экранах */
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    .auth-buttons {
+        margin-left: auto; /* Двигаем кнопки вправо */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal-content, .modal-content-user-agreement {
+        width: 90%; /* Уменьшение ширины для маленьких экранов */
+    }
+
+    .header-nav a {
+        font-size: 14px; /* Дополнительное уменьшение шрифта */
+    }
+}
+
+.games-header {
+    background-color: #1e2a36; /* Темнее, чем у хедера */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 20px auto;
+    width: 95%;
+    border-radius: 10px;
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    transition: font-size 0.3s ease;
+}
+
+.games-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #0a1420;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    justify-content: center; /* Центрирование элементов по горизонтали */
+    padding: 0 20px; /* Отступы по бокам */
+    margin: 0 20px;
+    max-width: calc(100% - 20px)
+}
+
+.game {
+    text-align: center;
+}
+
+.game-icon {
+    width: 150px; /* Устанавливаем желаемую ширину */
+    height: 150px; /* Устанавливаем желаемую высоту */
+    background-color: transparent; /* Убираем фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    overflow: hidden; /* Скрываем части изображения, выходящие за пределы контейнера */
+}
+
+.game-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Изображение заполнит контейнер, сохраняя пропорции */
+}
+
+
+.game-icon:hover {
+    transform: scale(1.1);
+}
+.game-icon img {
+    width: 70%;
+    height: 70%;
+}
+.game-title {
+    margin-top: 10px;
+    font-size: 18px;
+}
+/* Стили для регистрационного модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Предотвращение прокрутки */
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8); /* Прозрачный черный фон */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1001; /* Убедитесь, что модальное окно поверх фонового затемнения */
+}
+.modal-content {
+    background-color: #2c3e50; /* Цвет фона сайта */
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px; /* Уменьшенная ширина */
+    height: auto; /* Автоматическая высота */
+    text-align: center;
+    position: relative;
+    z-index: 1002;
+}
+
+.modal-content input[type="email"],
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+    width: 90%; /* Увеличенная ширина полей */
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.modal-content button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.modal-content button:hover {
+    background-color: #2ecc71;
+}
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Стили для текста на главной странице */
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    margin-bottom: 20px;
+    padding-top: 130px; /* Добавлен отступ сверху */
+}
+.welcome-text {
+    width: 50%;
+    font-family: 'Poppins', sans-serif;
+}
+.welcome-image {
+    width: 50%;
+    position: relative;
+    padding: 20px; /* Добавлен отступ для текста */
+}
+.welcome-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+.play-button {
+    position: absolute;
+    bottom: 50px; /* Поднятие кнопки выше от нижнего края */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #2c3e50;
+    padding: 15px 30px; /* Увеличенные отступы для кнопки */
+    border: none;
+    border-radius: 10px; /* Закругленные углы */
+    font-size: 20px; /* Увеличенный размер шрифта */
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.play-button:hover {
+    background-color: #ecf0f1;
+    transform: translateX(-50%) scale(1.1); /* Анимация увеличения */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Добавление тени */
+}
+.play-button:active {
+    transform: translateX(-50%) scale(0.95); /* Уменьшение при нажатии */
+}
+.welcome-image .bank-text {
+    position: absolute;
+    top: 20px; /* Позиция текста вверху изображения */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px; /* Увеличение размера шрифта */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    padding: 0 10px; /* Немного добавленных отступов */
+}
+.welcome-text-image {
+    width: 100%; /* Или укажите фиксированную ширину */
+    max-width: 700px; /* Максимальная ширина изображения */
+    max-height: 105px;
+    margin-bottom: 15px; /* Отступ снизу, чтобы отделить от текста */
+    display: block;
+}
+.all-slots-container {
+    text-align: center; /* Центрируем кнопку */
+    margin: 20px 0; /* Отступ сверху и снизу */
+}
+
+.all-slots-button {
+    background-color: #e74c3c; /* Красный цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border: none;
+    border-radius: 5px; /* Закругленные углы кнопки */
+    font-size: 18px; /* Размер шрифта кнопки */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.all-slots-button:hover {
+    background-color: #c0392b; /* Темнее красный цвет при наведении */
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+.image-blocks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Отступы между блоками */
+    padding: 20px 10px; /* Отступы сверху и снизу, а также по бокам */
+    background-color: #0f1a26; /* Более темный цвет фона */
+    border-radius: 10px;
+    margin: 20px 10px; /* Отступы по бокам от контейнера */
+}
+
+.image-block {
+    flex: 1; /* Позволяет блокам занимать равную ширину */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-block img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 10px;
+}
+.footer {
+    background-color: #1b2a38; /* Цвет фона футера */
+    color: white;
+    padding: 20px;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+}
+
+.footer-left h3, .footer-right h3 {
+    margin-top: 0;
+}
+
+.footer-left p, .footer-right p {
+    margin: 5px 0;
+}
+
+.footer-left a {
+    color: #2ecc71; /* Цвет ссылок */
+    text-decoration: none;
+}
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Прижимаем текст к правой стороне */
+    color: white;
+    padding-right: 20px; /* Добавляем немного отступа справа */
+}
+
+.footer-right h3 {
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    border-bottom: 2px solid #2ecc71; /* Подчеркнут заголовок */
+    padding-bottom: 10px;
+    margin-bottom: 15px; /* Отступ снизу заголовка */
+}
+
+.footer-right p {
+    margin: 0px 0;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.footer-right p:first-child {
+    font-weight: 700; /* Выделить первый пункт */
+    color: #2ecc71; /* Цвет для выделенного текста */
+}
+.footer-left a:hover {
+    text-decoration: underline;
+}
+/* Стили для затемнения фона */
+/* Стили для затемнения фона */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    z-index: 1000; /* Убедитесь, что фон поверх контента */
+}
+
+/* Когда модальное окно открыто */
+.modal.show, .overlay.show {
+    display: block;
+}
+
+/* Опционально, чтобы сделать кнопки модального окна фиксированными */
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.profile span {
+    font-size: 18px;
+    color: white;
+}
+
+.logout-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+/*Пользователь уже существует */
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.success-message {
+    color: #2ecc71;
+    font-size: 14px;
+    margin-top: 10px;
+} 
+
+/* Стили для модального окна входа */
+#loginModal .modal-content {
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px; /* Задаем максимальную ширину модального окна */
+}
+
+#loginModal .modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+#loginModal .modal-content input,
+#loginModal .modal-content button {
+    width: 100%; /* Ширина полей ввода и кнопки 100% от ширины формы */
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Включает паддинги и бордеры в ширину элемента */
+}
+
+#loginModal .modal-content .forgot-password {
+    align-self: flex-start; /* Сдвигает ссылку к началу формы */
+    margin-bottom: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+#loginModal .modal-content .forgot-password:hover {
+    text-decoration: underline;
+}
+
+#loginModal .modal-content button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#loginModal .modal-content button:hover {
+    background-color: #0056b3;
+}
+.footer-bottom {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1b2a38;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-between; /* Распределяет пространство между элементами */
+    align-items: center; /* Вертикальное выравнивание элементов по центру */
+}
+.footer-bottom a {
+    color: #2ecc71; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline; /* Подчеркивание ссылок при наведении */
+}
+
+.footer-bottom p {
+    margin: 5px 0; /* Отступы сверху и снизу у параграфов */
+}
+/* Стили для модального окна пользовательского соглашения */
+#termsModal .modal-content {
+    max-width: 600px;
+    width: 90%;
+    padding: 20px;
+}
+
+#termsModal h2 {
+    margin-top: 0;
+}
+
+#termsModal p {
+    margin-bottom: 10px;
+}
+
+#termsModal .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.modal-user-agreement {
+    display: none; /* Скрыть модальное окно по умолчанию */
+    position: fixed; /* Окно фиксировано */
+    z-index: 1; /* Поверх всех элементов */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина экрана */
+    height: 100%; /* Полная высота экрана */
+    overflow: auto; /* Добавить прокрутку, если нужно */
+    background-color: rgba(0, 0, 0, 0.4); /* Полупрозрачный черный фон */
+}
+
+/* Стили для содержимого модального окна пользовательского соглашения */
+.modal-content-user-agreement {
+    background-color: #fefefe;
+    margin: 15% auto; /* Центрирование по вертикали и горизонтали */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ширина модального окна */
+    max-width: 600px; /* Максимальная ширина модального окна */
+}
+
+/* Стили для кнопки закрытия модального окна пользовательского соглашения */
+.close-user-agreement {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-user-agreement:hover,
+.close-user-agreement:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

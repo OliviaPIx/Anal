@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympix - Онлайн казино</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Olympix">
+        </div>
+        <div class="header-nav">
+            <a href="#">Игры</a>
+            <a href="#">Промо</a>
+            <a href="#">Бонусы</a>
+            <a href="#">Поддержка</a>
+        </div>
+        <div class="profile" id="profile" style="display: none;">
+            <img src="profile-icon.png" alt="Profile Icon" class="profile-icon">
+            <span id="username-display">Username</span>
+            <a href="logout.php" class="logout-button">Выйти</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="#" class="login" onclick="openLoginModal()">Вход</a>
+            <a href="#" class="register" onclick="openRegisterModal()">Регистрация</a>
+        </div>
+        <span class="menu-icon" onclick="openNav()">&#9776;</span>
+    </div>
+    <!-- Боковое меню -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Игры</a>
+        <a href="#">Промо</a>
+        <a href="#">Бонусы</a>
+        <a href="#">Поддержка</a>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="welcome-section">
+        <div class="welcome-text">
+            <img src="dep500.jpg" alt="Welcome Image" class="welcome-text-image">
+            <h2>Добро пожаловать в Olympix – ваше лучшее казино для захватывающих игр и выигрышей!</h2>
+            <p>В Olympix мы гордимся тем, что предоставляем нашим игрокам исключительно честный и безопасный игровой опыт. Наше казино использует передовые технологии и алгоритмы для обеспечения прозрачности всех игровых процессов, чтобы вы могли быть уверены в справедливости каждого раунда.</p>
+
+<p>Мы понимаем, как важно для вас получать свои выигрыши быстро и без задержек. Поэтому мы гарантируем оперативные выплаты, чтобы вы могли наслаждаться своими победами сразу же. В Olympix вы можете выбрать наиболее удобный для вас способ вывода средств – будь то банковская карта, криптовалюта или электронные кошельки.</p>
+
+<p>Наша команда всегда готова помочь вам и обеспечить наилучший сервис. Присоединяйтесь к нам в Olympix и погружайтесь в мир непревзойденного азарта и невероятных выигрышей!</p>
+
+        </div>
+        <div class="welcome-image">
+            <img src="game-logo.jpg" alt="Casino">
+            <p class="bank-text">Каждый может забрать весь банк даже ставя 50 рублей!</p>
+            <button class="play-button">Играть</button>
+        </div>
+    </div>
+
+    <!-- Заголовок раздела игр -->
+    <div class="games-header">Популярные</div>
+
+    <!-- Секция игр -->
+    <div class="games-container">
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 1"></div>
+            <div class="game-title">Геракл</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 2"></div>
+            <div class="game-title">Зевск</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 3"></div>
+            <div class="game-title">Геркулес</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 4"></div>
+            <div class="game-title">Афина</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 5"></div>
+            <div class="game-title">Гелион</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 6"></div>
+            <div class="game-title">Нептун</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 7"></div>
+            <div class="game-title">Аид</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 8"></div>
+            <div class="game-title">Поссейдон</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 9"></div>
+            <div class="game-title">Гермес</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 10"></div>
+            <div class="game-title">Кратос</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 11"></div>
+            <div class="game-title">Тор</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 12"></div>
+            <div class="game-title">Game 12</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 13"></div>
+            <div class="game-title">Game 13</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 14"></div>
+            <div class="game-title">Game 14</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg" alt="Game 15"></div>
+            <div class="game-title">Game 15</div>
+        </div>
+        <div class="game">
+            <div class="game-icon"><img src="zuvsjpg.jpg"Game 16"></div>
+            <div class="game-title">Game 16</div>
+        </div>
+    </div>
+    <div class="all-slots-container">
+        <button class="all-slots-button">Все слоты</button>
+    </div>
+
+    <!-- Дополнительные блоки с изображениями -->
+    <div class="image-blocks">
+        <div class="image-block">
+            <img src="defka.png" alt="Image 1">
+        </div>
+        <div class="image-block">
+            <img src="defa.png" alt="Image 2">
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>Контакты поддержки:</h3>
+                <p>Служба поддержки: <a href="mailto:support@example.com">support@example.com</a></p>
+                <p>Служба безопасности: <a href="mailto:security@example.com">security@example.com</a></p>
+                <p>Для предложений: <a href="mailto:feedback@example.com">feedback@example.com</a></p>
+            </div>
+            <div class="footer-right">
+                <h3>Категория:</h3>
+                <p>Онлайн казино</p>
+                <p>Азартные игры</p>
+                <p>Развличения</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><a href="">Пользовательское соглашение</a></p>
+        </div>
+        <div id="termsModal" class="modal">
+            <div class="modal-content">
+                <span id="closeTermsModal" class="close">&times;</span>
+                <h2>Пользовательское соглашение</h2>
+                <!-- Содержание соглашения -->
+            </div>
+        </div>
+        <button id="openTermsModal">Открыть пользовательское соглашение</button>
+    </footer>
+
+    <div id="overlay" class="overlay"></div>
+    <!-- Регистрационное модальное окно -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRegisterModal()">&times;</span>
+            <h2>Регистрация</h2>
+            <form id="registerForm">
+                <input type="email" id="registerEmail" name="email" placeholder="Электронный адрес" required>
+                <input type="text" id="registerUsername" name="username" placeholder="Логин" required>
+                <input type="password" id="registerPassword" name="password" placeholder="Пароль" required>
+                <input type="password" id="registerPasswordConfirm" placeholder="Повторите пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+                <p id="registerError" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно входа -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Вход</h2>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Логин или почта" required>
+                <input type="password" id="loginPassword" placeholder="Пароль" required>
+                <a href="#" class="forgot-password">Забыли пароль?</a>
+                <button type="submit">Войти</button>
+                <p id="loginError" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
